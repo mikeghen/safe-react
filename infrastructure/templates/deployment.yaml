@@ -1,0 +1,21 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: safe-react
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: safe-react
+  template:
+    metadata:
+      labels:
+        app: safe-react
+    spec:
+      containers:
+        - name: hello
+          image: us.gcr.io/tellor-pool-development/safe-react
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
+      restartPolicy: Always
