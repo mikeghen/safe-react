@@ -1,0 +1,8 @@
+version: '2'
+services:
+  gnosissafe:
+    image: safe
+    ports:
+      - "5000:80"
+    volumes:
+      - ./build:/usr/share/nginx/html
